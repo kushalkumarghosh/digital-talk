@@ -25,8 +25,7 @@ api.interceptors.response.use(
         localStorage.removeItem("token");
         localStorage.removeItem("role");
 
-        const redirectTo =
-          window.location.pathname + window.location.search;
+        const redirectTo = window.location.pathname + window.location.search;
         sessionStorage.setItem("postLoginRedirect", redirectTo);
 
         if (window.location.pathname !== "/login") {
@@ -35,7 +34,7 @@ api.interceptors.response.use(
       }
     }
     return Promise.reject(err);
-  }
+  },
 );
 
 export default api;
